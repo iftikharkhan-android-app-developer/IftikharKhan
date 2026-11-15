@@ -17,26 +17,19 @@ import com.iftikhar.khan.databinding.ActivitySplashBinding
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivitySplashBinding
-
     private val handler = Handler(Looper.getMainLooper())
     private var splashRunnable: Runnable? = null
-
     private var avatarAnimator: ObjectAnimator? = null
     private var loadingAnimator: ObjectAnimator? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
-
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         startSplashAnimations()
         scheduleNavigation()
     }
-
     private fun scheduleNavigation() {
         splashRunnable = Runnable {
             if (!isFinishing && !isDestroyed) {
@@ -45,12 +38,9 @@ class SplashActivity : AppCompatActivity() {
         }
         handler.postDelayed(splashRunnable!!, SPLASH_DELAY_MS)
     }
-
     private fun navigateToMain() {
         cancelAnimations()
-
         startActivity(Intent(this, MainActivity::class.java))
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
             overrideActivityTransition(
                 OVERRIDE_TRANSITION_OPEN,
@@ -64,10 +54,8 @@ class SplashActivity : AppCompatActivity() {
                 android.R.anim.fade_out
             )
         }
-
         finish()
     }
-
     private fun startSplashAnimations() {
         // Initial view states
         binding.mtrlCardId.apply {
@@ -75,14 +63,12 @@ class SplashActivity : AppCompatActivity() {
             scaleX = 0.7f
             scaleY = 0.7f
         }
-
         binding.imageSle.alpha = 0f
         binding.text.apply {
             alpha = 0f
             translationY = 25f
         }
         binding.loadingText.alpha = 0f
-
         // Logo card animation
         val logoAnimation = AnimatorSet().apply {
             playTogether(
@@ -96,15 +82,12 @@ class SplashActivity : AppCompatActivity() {
 
         logoAnimation.doOnEnd {
             if (isFinishing || isDestroyed) return@doOnEnd
-
             // Profile avatar fade and horizontal float
             binding.imageSle.animate()
                 .alpha(1f)
                 .setDuration(AVATAR_FADE_DURATION_MS)
                 .start()
-
             val travelDistance = AVATAR_TRAVEL_DP * resources.displayMetrics.density
-
             avatarAnimator = ObjectAnimator.ofFloat(
                 binding.imageSle,
                 View.TRANSLATION_X,
@@ -117,7 +100,6 @@ class SplashActivity : AppCompatActivity() {
                 interpolator = AccelerateDecelerateInterpolator()
                 start()
             }
-
             // App title animation
             AnimatorSet().apply {
                 playTogether(

@@ -13,7 +13,6 @@ data class PortfolioProfile(
     val githubUrl: String,
     val contactEmail: String
 )
-
 /**
  * Data model representing a published or showcase Android app project.
  */
@@ -23,12 +22,10 @@ data class PortfolioProject(
     val category: String,
     val packageName: String
 )
-
 /**
  * Repository supplying portfolio data for the application.
  */
 object PortfolioRepository {
-
     val profile = PortfolioProfile(
         name = "Iftikhar Khan",
         role = "Android Application Engineer",
@@ -41,7 +38,6 @@ object PortfolioRepository {
         githubUrl = "https://github.com/iftikharkhan-android-app-developer",
         contactEmail = "aacontact03@gmail.com"
     )
-
     val skills = listOf(
         "Kotlin",
         "Java",
@@ -53,7 +49,6 @@ object PortfolioRepository {
         "OpenCV",
         "ML Kit"
     )
-
     val projects = listOf(
         PortfolioProject(
             name = "ArCaif AI Photo Editor",

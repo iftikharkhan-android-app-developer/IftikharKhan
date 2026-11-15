@@ -29,60 +29,41 @@ import androidx.core.view.WindowInsetsControllerCompat
 import com.iftikhar.khan.databinding.ActivityWebsiteBinding
 
 class WebsiteActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityWebsiteBinding
     private var startUrl = DEFAULT_URL
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         binding = ActivityWebsiteBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         startUrl = getValidUrl(intent.getStringExtra(EXTRA_URL))
-
         setupWindowInsets()
         setupToolbar()
         setupWebView()
         setupBrowserControls()
         setupBackNavigation()
-
         binding.webView.loadUrl(startUrl)
     }
-
     private fun setupWindowInsets() {
         val controller = WindowInsetsControllerCompat(window, window.decorView)
         controller.isAppearanceLightStatusBars = true
         controller.isAppearanceLightNavigationBars = true
-
         val topPadding = resources.getDimensionPixelSize(R.dimen.spacing_tiny)
         val endPadding = resources.getDimensionPixelSize(R.dimen.spacing_small)
         val bottomMarginExtra = resources.getDimensionPixelSize(R.dimen.spacing_medium)
-
         ViewCompat.setOnApplyWindowInsetsListener(binding.websiteRoot) { _, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            binding.websiteToolbar.setPadding(
-                topPadding,
-                bars.top,
-                endPadding,
-                topPadding
-            )
-
+            binding.websiteToolbar.setPadding(topPadding, bars.top, endPadding, topPadding)
             val layoutParams = binding.bottomDockCard.layoutParams as ViewGroup.MarginLayoutParams
             layoutParams.bottomMargin = bars.bottom + bottomMarginExtra
             binding.bottomDockCard.layoutParams = layoutParams
-
             insets
         }
     }
-
     private fun setupToolbar() {
         binding.websiteToolbar.setNavigationOnClickListener {
             finish()
         }
-
         binding.websiteToolbar.inflateMenu(R.menu.menu_website)
         binding.websiteToolbar.setOnMenuItemClickListener { menuItem: MenuItem ->
             if (menuItem.itemId == R.id.action_open_browser) {
@@ -264,7 +245,7 @@ class WebsiteActivity : AppCompatActivity() {
     private fun updateAddress(url: String?) {
         if (url.isNullOrBlank()) return
 
-        val uri = Uri.parse(url)
+        val uri = url.toUri()
         val host = uri.host
         if (!host.isNullOrBlank()) {
             binding.websiteToolbar.subtitle = host
@@ -322,7 +303,7 @@ class WebsiteActivity : AppCompatActivity() {
     private fun getValidUrl(url: String?): String {
         if (url.isNullOrBlank()) return DEFAULT_URL
 
-        val uri = Uri.parse(url)
+        val uri = url.toUri()
         val validScheme = uri.scheme == "https" || uri.scheme == "http"
 
         return if (validScheme && !uri.host.isNullOrBlank()) {
