@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Accent Palette -->
+    <color name="primary_pink">#FF355E</color>
+    <color name="primary_pink_light">#FFF0F3</color>
+    <color name="primary_pink_ripple">#FFE0E7</color>
+    <color name="primary_pink_stroke">#FFE0E7</color>
+    <color name="primary_pink_accent">#FF7891</color>
+    <color name="primary_pink_subtitle">#FF8DA1</color>
+
+    <!-- Dark Card Palette -->
+    <color name="card_dark_bg">#191D31</color>
+    <color name="card_dark_button">#34384A</color>
+    <color name="card_dark_divider">#34384A</color>
+    <color name="card_dark_text_body">#D0D2DC</color>
+    <color name="card_dark_text_sub">#C4C7D3</color>
+
+    <!-- Status Badge Colors -->
+    <color name="status_available_bg">#273D35</color>
+    <color name="status_available_text">#81E6AC</color>
+
+    <!-- Light Background & Surface -->
+    <color name="bg_light">#F5F6FA</color>
+    <color name="card_stroke">#E9EAF0</color>
+
+    <!-- Typography Colors -->
+    <color name="text_primary">#171923</color>
+    <color name="text_secondary">#34384A</color>
+    <color name="text_muted">#777B88</color>
+    <color name="text_footer">#9296A3</color>
+    <color name="text_footer_sub">#B0B3BC</color>
+
+    <!-- Progress Track -->
+    <color name="progress_bg">#F2DCE2</color>
+    <color name="splash_divider">#EEEEEE</color>
+    <color name="splash_subtext">#888888</color>
+</resources>

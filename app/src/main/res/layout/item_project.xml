@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_medium"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/corner_radius_large"
+    app:cardElevation="@dimen/card_elevation_low"
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="@dimen/stroke_width_thin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large">
+
+        <!-- Project Title -->
+        <TextView
+            android:id="@+id/projectTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_title_small"
+            android:textStyle="bold"
+            tools:text="ArCaif AI Photo Editor" />
+
+        <!-- Category Chip Badge -->
+        <TextView
+            android:id="@+id/projectCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:background="@drawable/bg_category_chip"
+            android:paddingHorizontal="@dimen/spacing_medium"
+            android:paddingVertical="@dimen/spacing_tiny"
+            android:textColor="@color/primary_pink"
+            android:textSize="@dimen/text_size_caption"
+            android:textStyle="bold"
+            tools:text="Photography" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/projectDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:lineSpacingExtra="@dimen/spacing_tiny"
+            android:textColor="@color/text_muted"
+            android:textSize="@dimen/text_size_body"
+            tools:text="AI photo editing, background removal, image resizing, object eraser and creative tools." />
+
+        <!-- Action Label -->
+        <TextView
+            android:id="@+id/projectActionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/btn_view_on_playstore"
+            android:textColor="@color/primary_pink"
+            android:textSize="@dimen/text_size_body_small"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

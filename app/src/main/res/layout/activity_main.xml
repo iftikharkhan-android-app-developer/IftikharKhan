@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_xlarge">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.12"
+                    android:text="@string/header_category"
+                    android:textColor="@color/primary_pink"
+                    android:textSize="@dimen/text_size_caption"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_tiny"
+                    android:text="@string/header_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_display"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShare"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height_share"
+                android:text="@string/action_share"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_pink"
+                app:backgroundTint="@color/primary_pink_light"
+                app:cornerRadius="@dimen/corner_radius_medium"
+                app:icon="@android:drawable/ic_menu_share"
+                app:iconTint="@color/primary_pink" />
+
+        </LinearLayout>
+
+        <!-- Profile Hero -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxlarge"
+            app:cardBackgroundColor="@color/card_dark_bg"
+            app:cardCornerRadius="@dimen/corner_radius_hero"
+            app:cardElevation="@dimen/card_elevation_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_xxlarge">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/avatar_hero_size"
+                        android:layout_height="@dimen/avatar_hero_size"
+                        app:cardCornerRadius="40dp"
+                        app:strokeColor="@color/primary_pink_accent"
+                        app:strokeWidth="@dimen/stroke_width_medium">
+
+                        <ImageView
+                            android:id="@+id/profileImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/profile_image_desc"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/profile_avatar" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_large"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/profileName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/developer_name"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_headline"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/profileRole"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_tiny"
+                            android:text="@string/developer_role"
+                            android:textColor="@color/primary_pink_subtitle"
+                            android:textSize="@dimen/text_size_body_small"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:background="@drawable/bg_status_badge"
+                            android:paddingHorizontal="@dimen/spacing_small"
+                            android:paddingVertical="@dimen/spacing_tiny"
+                            android:text="@string/profile_status"
+                            android:textColor="@color/status_available_text"
+                            android:textSize="@dimen/text_size_badge" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/spacing_xxlarge"
+                    android:layout_marginBottom="@dimen/spacing_large"
+                    android:background="@color/card_dark_divider" />
+
+                <TextView
+                    android:id="@+id/aboutText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="@dimen/spacing_tiny"
+                    android:text="@string/profile_about"
+                    android:textColor="@color/card_dark_text_body"
+                    android:textSize="@dimen/text_size_body" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xxlarge"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnWebsite"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height_hero"
+                        android:layout_marginEnd="@dimen/spacing_small"
+                        android:layout_weight="1"
+                        android:text="@string/btn_my_website"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_body_small"
+                        app:backgroundTint="@color/primary_pink"
+                        app:cornerRadius="@dimen/corner_radius_medium" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnContact"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height_hero"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:layout_weight="1"
+                        android:text="@string/btn_contact_me"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_body_small"
+                        app:backgroundTint="@color/card_dark_button"
+                        app:cornerRadius="@dimen/corner_radius_medium" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Statistics -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_section"
+            android:text="@string/section_experience"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/stat_card_height"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/corner_radius_large"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="@dimen/stroke_width_thin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/yearsValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stat_years_value"
+                        android:textColor="@color/primary_pink"
+                        android:textSize="@dimen/text_size_stat_number"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stat_years_label"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_size_body_small" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/stat_card_height"
+                android:layout_marginHorizontal="@dimen/spacing_small"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/corner_radius_large"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="@dimen/stroke_width_thin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/appsValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stat_apps_value"
+                        android:textColor="@color/primary_pink"
+                        android:textSize="@dimen/text_size_stat_number"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stat_apps_label"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_size_caption" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/stat_card_height"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/corner_radius_large"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="@dimen/stroke_width_thin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/skillsValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_pink"
+                        android:textSize="@dimen/text_size_stat_number"
+                        android:textStyle="bold"
+                        tools:text="9+" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stat_skills_label"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_size_caption" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Technical Skills -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_section"
+            android:text="@string/section_technical_skills"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/corner_radius_xlarge"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="@dimen/stroke_width_thin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_large">
+
+                <TextView
+                    android:id="@+id/skillsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="@dimen/spacing_small"
+                    android:text="@string/skills_summary"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_subhead" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Projects Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_section"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/section_featured_projects"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/badge_my_work"
+                android:textColor="@color/primary_pink"
+                android:textSize="@dimen/text_size_badge"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/projectsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:orientation="vertical" />
+
+        <!-- GitHub -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            app:cardBackgroundColor="@color/card_dark_bg"
+            app:cardCornerRadius="@dimen/corner_radius_xlarge">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_xlarge">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/github_card_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_title_small"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_tiny"
+                        android:text="@string/github_card_desc"
+                        android:textColor="@color/card_dark_text_sub"
+                        android:textSize="@dimen/text_size_body_small" />
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGithub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_height_standard"
+                    android:layout_marginStart="@dimen/spacing_small"
+                    android:text="@string/btn_github"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/primary_pink"
+                    app:cornerRadius="@dimen/corner_radius_medium" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_section"
+            android:gravity="center"
+            android:text="@string/footer_crafted_by"
+            android:textColor="@color/text_footer"
+            android:textSize="@dimen/text_size_body_small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:gravity="center"
+            android:text="@string/footer_built_with"
+            android:textColor="@color/text_footer_sub"
+            android:textSize="@dimen/text_size_caption" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

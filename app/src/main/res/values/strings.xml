@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App & Personal Info -->
+    <string name="app_name">Iftikhar Khan</string>
+    <string name="developer_name">Iftikhar Khan</string>
+    <string name="developer_role">Android Application Engineer</string>
+    <string name="profile_status">● Available for Projects</string>
+    <string name="profile_about">Android developer with 2+ years of hands-on experience. I build modern native Android applications using Kotlin, Java, Firebase, REST APIs and modern UI/UX.</string>
+
+    <!-- Header Section -->
+    <string name="header_category">DEVELOPER PORTFOLIO</string>
+    <string name="header_title">Discover My Work</string>
+    <string name="action_share">Share</string>
+
+    <!-- Profile Action Buttons -->
+    <string name="btn_my_website">My Website</string>
+    <string name="btn_contact_me">Contact Me</string>
+
+    <!-- Statistics Section -->
+    <string name="section_experience">My Experience</string>
+    <string name="stat_years_label">Years</string>
+    <string name="stat_years_value">2+</string>
+    <string name="stat_apps_label">Published Apps</string>
+    <string name="stat_apps_value">2</string>
+    <string name="stat_skills_label">Technologies</string>
+    <string name="stat_skills_value_format">%1$d+</string>
+
+    <!-- Technical Skills Section -->
+    <string name="section_technical_skills">Technical Skills</string>
+    <string name="skills_summary">Kotlin • Java • XML • Firebase • REST APIs</string>
+    <string name="skills_bullet_separator">  •  </string>
+
+    <!-- Projects Section -->
+    <string name="section_featured_projects">Featured Projects</string>
+    <string name="badge_my_work">MY WORK</string>
+    <string name="btn_view_on_playstore">View on Google Play  →</string>
+
+    <!-- GitHub Card -->
+    <string name="github_card_title">Explore My GitHub</string>
+    <string name="github_card_desc">Discover my Android projects and source code.</string>
+    <string name="btn_github">GitHub</string>
+
+    <!-- Footer -->
+    <string name="footer_crafted_by">Designed &amp; Developed by Iftikhar Khan</string>
+    <string name="footer_built_with">Built with Kotlin ❤️</string>
+
+    <!-- System & Toast Messages -->
+    <string name="msg_configure_github">Add your GitHub username in PortfolioRepository.kt</string>
+    <string name="msg_configure_email">Add your email in PortfolioRepository.kt</string>
+    <string name="msg_no_email_app">No email application found</string>
+    <string name="msg_email_subject">Android App Development Inquiry</string>
+    <string name="msg_share_chooser_title">Share My Portfolio</string>
+    <string name="msg_unable_to_open_url">Unable to open this link</string>
+
+    <!-- Website Activity -->
+    <string name="website_title">My Website</string>
+    <string name="website_subtitle">Personal Portfolio</string>
+    <string name="open_in_browser">Open in Browser</string>
+    <string name="error_website_unavailable">Website Unavailable</string>
+    <string name="error_check_connection">Check your internet connection and try again.</string>
+    <string name="btn_try_again">Try Again</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_forward">Forward</string>
+    <string name="btn_refresh">Refresh</string>
+    <string name="btn_share">Share</string>
+    <string name="share_portfolio_title">Share My Website</string>
+    <string name="share_subject">Iftikhar Khan - Developer Portfolio</string>
+    <string name="no_browser_found">No browser or supported application found.</string>
+    <string name="ssl_error_msg">A secure connection could not be established. Please try again later.</string>
+    <string name="server_error_msg">The website server is temporarily unavailable. Please try again.</string>
+    <string name="network_error_msg">Please check your internet connection and try again.</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_subtitle">Android Application Engineer</string>
+    <string name="splash_loading">Getting things ready&#8230;</string>
+    <string name="splash_desc">Developer Profile</string>
+    <string name="profile_image_desc">Developer profile</string>
+</resources>
